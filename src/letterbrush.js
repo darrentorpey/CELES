@@ -15,11 +15,11 @@ $(function() {
     initGridHeight: 50,
     initGridWidth:  100
   });
-
+  
   var scrollbarWidth = $("#vScroll").width();
   var scrollbarHeight = $("#vScroll").width();
   var scrollbarSize = $("#vScroll").width();
-  var MENU_WIDTH = $("#tools").width();
+  var MENU_WIDTH = 0; //$("#tools").width();
   
   var i, j;
   
@@ -826,7 +826,8 @@ $(function() {
     var newHeightPixels = maxHeight() - scrollbarSize;
     var newHeightTiles = Math.floor(newHeightPixels / view.scale);
     
-    $('#tools').css({ 'left' : maxWidth() - MENU_WIDTH + 'px' })
+    // $('#tools').css({ 'left' : maxWidth() - MENU_WIDTH + 'px' })
+    $('#tools').css({ 'width' : maxWidth() + 'px' })
 
     if (textWidth <= newWidthTiles) {
       newHeightTiles++;

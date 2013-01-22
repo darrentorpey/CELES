@@ -74,9 +74,11 @@ p {
 #tools {
   width: 220px;
   position: absolute;
-  right: 0;
-  top: 0;
+  bottom: 0;
+  left: 0;
   text-align: center;
+  z-index: 1;
+  color: #666;
 }
 
 #currentCharLabel {
@@ -85,9 +87,10 @@ p {
 }
 
 #currentChar {
-  font-size: 96px;
+  font-size: 2em;
   text-shadow: 1px 1px 0 #a03bff;
   margin: 0 0 10px;
+  float: left;
 }
 
 #currentCharHelp {
@@ -98,13 +101,14 @@ p {
   background-color: #efdeff;
   padding: 10px;
   border-radius: 5px 0 0 5px;
+  float: left;
 }
 
 #toolSelector button {
-  font-size: 1.2em;
-  width: 95px;
-  height: 60px;
-  margin: 2px 0;
+  font-size: 0.8em;
+  width: 4em;
+  height: 2em;
+  margin: 0.3em;
 }
 
 button {
@@ -166,6 +170,9 @@ button.beingClicked {
   background-color: #efdeff;
   padding: 10px 3px;
   border-radius: 5px 0 0 5px;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #importExport button {

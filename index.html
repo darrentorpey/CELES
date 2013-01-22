@@ -61,8 +61,9 @@
   <script>
     window.lb_opts = {
       maxWidth:       400,
-      initGridWidth:  20,
-      initGridHeight: 20
+      maxHeight:      400,
+      initGridWidth:  19,
+      initGridHeight: 19
     }
   </script>
 
@@ -70,7 +71,7 @@
     <canvas id="easel" width="400" height="400">
       You need canvas!
     </canvas>
-  
+
     <div id="hScroll">
       <div id="hScrollHandle"></div>
     </div>
@@ -78,10 +79,11 @@
       <div id="vScrollHandle"></div>
     </div>
     <div id="tools">
-      <div id="currentCharLabel">today's letter is</div>
-      <div id="currentChar">B</div>
-      <div id="currentCharHelp">type a letter<br>draw that letter</div>
+      <!-- <div id="currentCharLabel">today's letter is</div> -->
+      <!-- <div id="currentCharHelp">type a letter<br>draw that letter</div> -->
       <div id="toolSelector">
+        <div id="currentChar">B</div>
+
         <div id="toolbox">
           <button id="pencil" data-tool="pencil" class="tool active">pencil</button>
           <button id="line" data-tool="line" class="tool">line</button>
