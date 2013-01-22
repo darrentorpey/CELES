@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="lib/jqui/jquery-ui-1.8.16.custom.css">
+  <link rel="stylesheet" href="src/letterbrush.css">
+  <script src="lib/underscore.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/jqui/jquery-ui-1.8.16.custom.min.js"></script>
+  <script src="lib/jquery.mousewheel.min.js"></script>
+  <script src="lib/inherit.js"></script>
+  <script src="lib/keyDecode.js"></script>
+  <script src="src/letterbrush.js"></script>
+
   <script src="lib/crafty.js"></script>
   <script src="src/game.js"></script>
   <script src="src/components.js"></script>
@@ -34,7 +44,7 @@
 
     section.col {
       min-height: 400px;
-      min-width: 300px;
+      min-width: 400px;
       max-width: 50%;
     }
 
@@ -48,8 +58,86 @@
   </style>
 </head>
 <body>
-  <section class="side editor">
-    <p>Hi</p>
+  <script>
+    window.lb_opts = {
+      maxWidth:       400,
+      initGridWidth:  20,
+      initGridHeight: 20
+    }
+  </script>
+
+  <section class="col editor">
+    <canvas id="easel" width="400" height="400">
+      You need canvas!
+    </canvas>
+  
+    <div id="hScroll">
+      <div id="hScrollHandle"></div>
+    </div>
+    <div id="vScroll">
+      <div id="vScrollHandle"></div>
+    </div>
+    <div id="tools">
+      <div id="currentCharLabel">today's letter is</div>
+      <div id="currentChar">B</div>
+      <div id="currentCharHelp">type a letter<br>draw that letter</div>
+      <div id="toolSelector">
+        <div id="toolbox">
+          <button id="pencil" data-tool="pencil" class="tool active">pencil</button>
+          <button id="line" data-tool="line" class="tool">line</button>
+          <button id="square" data-tool="square" class="tool">square</button>
+          <button id="fill" data-tool="fill" class="tool">fill</button>
+          <button id="undo" disabled>undo</button>
+          <button id="redo" disabled>redo</button>
+        </div>
+        <div id="zoomTools">
+          <div id="zoomLabel">zoom</div>
+          <div id="zoom"></div>
+        </div>
+      </div>
+      <div id="importExport">
+        <div class="buttons">
+          <button id="import">import</button>
+          <button id="export">export</button>
+          <button id="colors">colors</button>
+        </div>
+        <div id="links">
+          <a href="#" id="shortcuts">shortcuts</a>
+          |
+          <a href="https://github.com/incompl/LetterBrush">github</a>
+          |
+          <a href="http://incompl.com">me</a>
+        </div>
+      </div>
+      <div id="importDialog">
+        <div id="fileInputWrapper">
+          <div id="fileInputLabel">
+            File
+          </div>
+          <input type="file" id="fileInput">
+        </div>
+        <div id="importOr">
+          or
+        </div>
+        <textarea id="importText">paste text here</textarea>
+      </div>
+      <div id="exportDialog">
+        <textarea id="exportText"></textarea>
+      </div>
+      <div id="colorsDialog">
+        <p>
+          Colors are customized with
+          <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>.
+        </p>
+        <textarea id="colorsJSON"></textarea>
+      </div>
+      <div id="shortcutsDialog">
+        ctrl-z = undo<br>
+        ctrl-y = redo<br>
+        right click = eyedropper<br>
+        tab = switch tool
+      </div>
+    </div>
   </section>
 
   <section class="col game">
@@ -60,8 +148,6 @@
     <div id="cr-stage"></div>
 
     <p class="controls">Controls: Use W, A, S, and D or arrow keys to move around.</p>
-
-    <p class="bottom">Created for the "Introduction to Crafty Game Engine" tutorial on <a href="http://buildnewgames.com" target="_blank">Build New Games</a>.
   </section>
 </body>
 </html>
