@@ -81,7 +81,7 @@
     <div id="tools">
       <!-- <div id="currentCharLabel">today's letter is</div> -->
       <!-- <div id="currentCharHelp">type a letter<br>draw that letter</div> -->
-      <div id="toolSelector">
+      <div class="toolPanel cf" id="toolSelector">
         <div id="currentChar">B</div>
 
         <div id="toolbox">
@@ -89,15 +89,17 @@
           <button id="line" data-tool="line" class="tool">line</button>
           <button id="square" data-tool="square" class="tool">square</button>
           <button id="fill" data-tool="fill" class="tool">fill</button>
-          <button id="undo" disabled>undo</button>
-          <button id="redo" disabled>redo</button>
         </div>
+      </div>
+      <div class="toolPanel cf">
+        <button id="undo" disabled>undo</button>
+        <button id="redo" disabled>redo</button>
         <div id="zoomTools">
           <div id="zoomLabel">zoom</div>
           <div id="zoom"></div>
         </div>
       </div>
-      <div id="importExport">
+      <div class="toolPanel cf" id="importExport">
         <div class="buttons">
           <button id="import">import</button>
           <button id="export">export</button>
@@ -111,6 +113,7 @@
           <a href="http://incompl.com">me</a>
         </div>
       </div>
+
       <div id="importDialog">
         <div id="fileInputWrapper">
           <div id="fileInputLabel">

@@ -72,18 +72,21 @@ p {
 }
 
 #tools {
-  width: 220px;
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
   text-align: center;
   z-index: 1;
   color: #666;
+  width: 220px;
 }
 
-#currentCharLabel {
-  padding: .5em 0;
-  font-style: italic;
+#zoomTools {
+  width: 240px;
+  float: right;
+  display: inline;
+  margin: 10px 0;
 }
 
 #currentChar {
@@ -91,23 +94,52 @@ p {
   text-shadow: 1px 1px 0 #a03bff;
   margin: 0 0 10px;
   float: left;
+  width: 1em;
 }
 
 #currentCharHelp {
   margin: .5em 0;
 }
 
-#toolSelector {
-  background-color: #efdeff;
-  padding: 10px;
-  border-radius: 5px 0 0 5px;
-  float: left;
+/* Sanity */
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
 }
 
-#toolSelector button {
+.cf:after {
+   clear: both;
+  text-align: center;
+}
+
+.toolPanel {
+  background-color: #efdeff;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 3px;
+}
+
+.toolPanel button {
   font-size: 0.8em;
   width: 4em;
   height: 2em;
+  float: left;
+  margin: 5px 0.3em;
+}
+
+/* Old Stuff */
+
+#toolSelector {
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  float: left;
+  width: 100%;
+}
+
+
+#toolSelector button {
   margin: 0.3em;
 }
 
@@ -149,15 +181,23 @@ button.beingClicked {
 }
 
 #zoomLabel {
-  margin: 5px 0 8px;
+  display: inline;
+  float: left;
+}
+
+.ui-slider .ui-slider-handle {
+  height: 1.4em;
+  width: 1.4em;
 }
 
 #zoom {
-  margin: 0 5px;
+  margin: 0 5px 0 60px;
+  width: 165px;
+  height: 20px;
 }
 
 .buttons {
-  text-align: left;
+  text-align: center;
   margin: 0 12px;
 }
 
@@ -166,11 +206,7 @@ button.beingClicked {
 }
 
 #importExport {
-  margin: 10px 0 0;
-  background-color: #efdeff;
   padding: 10px 3px;
-  border-radius: 5px 0 0 5px;
-  float: left;
   width: 100%;
   box-sizing: border-box;
 }
@@ -178,6 +214,7 @@ button.beingClicked {
 #importExport button {
   font-size: 1.1em;
   width: 90px;
+  float: none;
 }
 
 #fileInputLabel {
